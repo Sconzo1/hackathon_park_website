@@ -7,7 +7,7 @@ import Card from "shared/components/Card/Card";
 import CardHeader from "shared/components/Card/CardHeader";
 import CardBody from "shared/components/Card/CardBody";
 
-import AttractionCard from "./cards/AttractionCard";
+import AttractionCard from "./Cards/AttractionCard";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -97,6 +97,7 @@ const TabTile = ({listAttr, setListAttr}) => {
                                 index={i}
                                 title={element.name}
                                 desc={element.desc}
+                                image={element.image}
                                 handleClickOpenDeleteDialog={handleClickOpenDeleteDialog}
                                 handleClickOpenShowDialog={handleClickOpenShowDialog}
                             />)
@@ -152,7 +153,7 @@ const TabAnalytics = ({listAttr}) => {
 
     const classes = useStyles()
 
-    const arrayAttr = listAttr.map(obj => Object.values(obj));
+    const arrayAttr = listAttr.map(({name, desc}) => [name, desc]);
 
     return (
         <TabPanel value="1">
@@ -293,35 +294,43 @@ export default function Attractions() {
 
     const [mockAttr, setMockAttr] = useState([
         {
-            name: "Название 1",
+            name: "Автодром",
+            image: import("dashboard/assets/img/attractions/autodrom.jpg"),
             desc: "Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров"
         },
         {
-            name: "Название 2",
+            name: "Веселое путешествие",
+            image: import("dashboard/assets/img/attractions/fun travel.jpg"),
             desc: "Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров"
         },
         {
-            name: "Название 3",
+            name: "Кенгуру",
+            image: import("dashboard/assets/img/attractions/kenguru.jpg"),
             desc: "Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров"
         },
         {
-            name: "Название 4",
+            name: "Колесо обозрения",
+            image: import("dashboard/assets/img/attractions/koleso.jpg"),
             desc: "Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров"
         },
         {
-            name: "Название 5",
+            name: "Машинки",
+            image: import("dashboard/assets/img/attractions/mashinki.jpg"),
             desc: "Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров"
         },
         {
-            name: "Название 6",
+            name: "Сказка",
+            image: import("dashboard/assets/img/attractions/skazka.jpg"),
             desc: "Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров"
         },
         {
-            name: "Название 7",
+            name: "Вертолет",
+            image: import("dashboard/assets/img/attractions/vertolet.jpg"),
             desc: "Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров"
         },
         {
-            name: "Название 8",
+            name: "Везунчики",
+            image: import("dashboard/assets/img/attractions/vezunchiki.jpg"),
             desc: "Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров"
         },
     ]);

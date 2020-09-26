@@ -85,10 +85,10 @@ export default function AdminNavbarLinks() {
                     className={classes.buttonLink}
                 >
                     <Notifications className={classes.icons}/>
-                    <span className={classes.notifications}>5</span>
+                    <span className={classes.notifications}>3</span>
                     <Hidden mdUp implementation="css">
                         <p onClick={handleCloseNotification} className={classes.linkText}>
-                            Notification
+                            Уведомления
                         </p>
                     </Hidden>
                 </Button>
@@ -119,31 +119,19 @@ export default function AdminNavbarLinks() {
                                             onClick={handleCloseNotification}
                                             className={classes.dropdownItem}
                                         >
-                                            Mike John responded to your email
+                                            Вам пришло письмо от юр. лица
                                         </MenuItem>
                                         <MenuItem
                                             onClick={handleCloseNotification}
                                             className={classes.dropdownItem}
                                         >
-                                            You have 5 new tasks
+                                            У вас +5 отзывов
                                         </MenuItem>
                                         <MenuItem
                                             onClick={handleCloseNotification}
                                             className={classes.dropdownItem}
                                         >
-                                            You{"'"}re now friend with Andrew
-                                        </MenuItem>
-                                        <MenuItem
-                                            onClick={handleCloseNotification}
-                                            className={classes.dropdownItem}
-                                        >
-                                            Another Notification
-                                        </MenuItem>
-                                        <MenuItem
-                                            onClick={handleCloseNotification}
-                                            className={classes.dropdownItem}
-                                        >
-                                            Another One
+                                            Новый сотрудник Дакота
                                         </MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
