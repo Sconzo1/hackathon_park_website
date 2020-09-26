@@ -36,7 +36,7 @@ const dashboardRoutes = [
     },
     {
         path: "/events",
-        name: "Мероприятия",
+        name: "События",
         icon: EventRoundedIcon,
         component: Events,
         layout: "/admin"
@@ -48,13 +48,13 @@ const dashboardRoutes = [
         component: Promo,
         layout: "/admin"
     },
-    {
-        path: "/tracks",
-        name: "Маршруты",
-        icon: RoomRoundedIcon,
-        component: Tracks,
-        layout: "/admin"
-    },
+    // {
+    //     path: "/tracks",
+    //     name: "Маршруты",
+    //     icon: RoomRoundedIcon,
+    //     component: Tracks,
+    //     layout: "/admin"
+    // },
     {
         path: "/workers",
         name: "Работники",
@@ -62,20 +62,20 @@ const dashboardRoutes = [
         component: Workers,
         layout: "/admin"
     },
-    {
-        path: "/maps",
-        name: "Карта",
-        icon: LocationOn,
-        component: Maps,
-        layout: "/admin"
-    },
-    {
-        path: "/notifications",
-        name: "Уведомления",
-        icon: Notifications,
-        component: NotificationsPage,
-        layout: "/admin"
-    },
+    // {
+    //     path: "/maps",
+    //     name: "Карта",
+    //     icon: LocationOn,
+    //     component: Maps,
+    //     layout: "/admin"
+    // },
+    // {
+    //     path: "/notifications",
+    //     name: "Уведомления",
+    //     icon: Notifications,
+    //     component: NotificationsPage,
+    //     layout: "/admin"
+    // },
     {
         path: "/user",
         name: "Профиль",

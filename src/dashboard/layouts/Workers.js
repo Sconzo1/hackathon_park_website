@@ -47,9 +47,9 @@ export default function Workers() {
                             <CardIcon color="warning">
                                 <Icon>content_copy</Icon>
                             </CardIcon>
-                            <p className={classes.cardCategory}>Used Space</p>
+                            <p className={classes.cardCategory}>План (мес.)</p>
                             <h3 className={classes.cardTitle}>
-                                49/50 <small>GB</small>
+                                46<small>%</small>
                             </h3>
                         </CardHeader>
                         <CardFooter stats>
@@ -57,8 +57,8 @@ export default function Workers() {
                                 <Danger>
                                     <Warning/>
                                 </Danger>
-                                <a href="#pablo" onClick={e => e.preventDefault()}>
-                                    Get more space
+                                <a onClick={e => e.preventDefault()}>
+                                    Вы отстаете от графика
                                 </a>
                             </div>
                         </CardFooter>
@@ -70,13 +70,13 @@ export default function Workers() {
                             <CardIcon color="success">
                                 <Store/>
                             </CardIcon>
-                            <p className={classes.cardCategory}>Revenue</p>
+                            <p className={classes.cardCategory}>Выручка</p>
                             <h3 className={classes.cardTitle}>₽34,245</h3>
                         </CardHeader>
                         <CardFooter stats>
                             <div className={classes.stats}>
                                 <DateRange/>
-                                Last 24 Hours
+                                За 24 часа
                             </div>
                         </CardFooter>
                     </Card>
@@ -87,13 +87,13 @@ export default function Workers() {
                             <CardIcon color="danger">
                                 <Icon>info_outline</Icon>
                             </CardIcon>
-                            <p className={classes.cardCategory}>Fixed Issues</p>
+                            <p className={classes.cardCategory}>Отзывов</p>
                             <h3 className={classes.cardTitle}>75</h3>
                         </CardHeader>
                         <CardFooter stats>
                             <div className={classes.stats}>
                                 <LocalOffer/>
-                                Tracked from Github
+                                С сайта "Яндекс"
                             </div>
                         </CardFooter>
                     </Card>
@@ -105,12 +105,11 @@ export default function Workers() {
                                 <Accessibility/>
                             </CardIcon>
                             <p className={classes.cardCategory}>Сотрудники</p>
-                            <h3 className={classes.cardTitle}>6</h3>
+                            <h3 className={classes.cardTitle}>42</h3>
                         </CardHeader>
                         <CardFooter stats>
                             <div className={classes.stats}>
-                                <Update/>
-                                Just Updated
+                                <DateRange/> За последнее время
                             </div>
                         </CardFooter>
                     </Card>
