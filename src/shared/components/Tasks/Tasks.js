@@ -56,7 +56,7 @@ export default function Tasks(props) {
             <TableCell className={classes.tableActions}>
               <Tooltip
                 id="tooltip-top"
-                title="Edit Task"
+                title="Ответить"
                 placement="top"
                 classes={{ tooltip: classes.tooltip }}
               >
@@ -73,7 +73,7 @@ export default function Tasks(props) {
               </Tooltip>
               <Tooltip
                 id="tooltip-top-start"
-                title="Remove"
+                title="Удалить"
                 placement="top"
                 classes={{ tooltip: classes.tooltip }}
               >

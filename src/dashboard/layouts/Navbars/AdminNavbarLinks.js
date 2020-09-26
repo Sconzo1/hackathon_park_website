@@ -194,20 +194,20 @@ export default function AdminNavbarLinks() {
                                             onClick={handleCloseProfile}
                                             className={classes.dropdownItem}
                                         >
-                                            Profile
+                                            Профиль
                                         </MenuItem>
                                         <MenuItem
                                             onClick={handleCloseProfile}
                                             className={classes.dropdownItem}
                                         >
-                                            Settings
+                                            Настройки
                                         </MenuItem>
                                         <Divider light/>
                                         <MenuItem
                                             onClick={handleCloseProfile}
                                             className={classes.dropdownItem}
                                         >
-                                            Logout
+                                            Выйти
                                         </MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>

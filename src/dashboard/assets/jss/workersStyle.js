@@ -1,7 +1,7 @@
-import {grayColor, whiteColor} from "shared/assets/jss/material-dashboard-react.js";
-import tooltipStyle from "../../shared/assets/jss/material-dashboard-react/tooltipStyle";
+import {grayColor, whiteColor} from "shared/assets/jss/theme.js";
+import tooltipStyle from "../../../shared/assets/jss/material-dashboard-react/tooltipStyle";
 
-const iconsStyle = {
+const workersStyle = {
     ...tooltipStyle,
     tableActionButton: {
         width: "27px",
@@ -89,4 +89,4 @@ const iconsStyle = {
     },
 };
 
-export default iconsStyle;
+export default workersStyle;

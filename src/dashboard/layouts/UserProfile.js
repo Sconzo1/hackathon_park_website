@@ -12,7 +12,7 @@ import CardAvatar from "shared/components/Card/CardAvatar.js";
 import CardBody from "shared/components/Card/CardBody.js";
 import CardFooter from "shared/components/Card/CardFooter.js";
 
-import avatar from "dashboard/img/marc.jpg";
+import avatar from "dashboard/assets/img/marc.jpg";
 
 const styles = {
     cardTitleWhite: {

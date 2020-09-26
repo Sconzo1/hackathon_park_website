@@ -6,15 +6,15 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
-import Navbar from "./components/Navbars/Navbar.js";
-import Footer from "./components/Footer/Footer.js";
-import Sidebar from "./components/Sidebar/Sidebar.js";
+import Navbar from "./layouts/Navbars/Navbar.js";
+import Footer from "./layouts/Footer/Footer.js";
+import Sidebar from "./layouts/Sidebar/Sidebar.js";
 
 import routes from "./routes";
 
-import styles from "./jss/adminStyle.js";
+import styles from "./assets/jss/adminStyle.js";
 
-import logo from "./img/reactlogo.png";
+import logo from "./assets/img/reactlogo.png";
 
 let ps;
 
@@ -32,7 +32,7 @@ const switchRoutes = (
       }
       return null;
     })}
-    <Redirect from="/admin" to="/admin/dashboard" />
+    <Redirect from="/admin" to="/admin/home" />
   </Switch>
 );
 
@@ -50,8 +50,9 @@ export default function Main({ ...rest }) {
     setMobileOpen(!mobileOpen);
   };
 
-  const isMapRoute = () => {
-    return window.location.pathname !== "/admin/maps";
+  const hasRouteWrapper = () => {
+    const cond = window.location.pathname !== "/admin/maps" && window.location.pathname !== "/admin/events"
+    return cond;
   };
 
   const resizeFunction = () => {
@@ -94,15 +95,14 @@ export default function Main({ ...rest }) {
           handleDrawerToggle={handleDrawerToggle}
           {...rest}
         />
-        {/* On the /maps route we want the map to be on full screen - this is not possible if the content and container classes are present because they have some paddings which would make the map smaller */}
-        {isMapRoute() ? (
+        {hasRouteWrapper() ? (
           <div className={classes.content}>
             <div className={classes.container}>{switchRoutes}</div>
           </div>
         ) : (
           <div className={classes.map}>{switchRoutes}</div>
         )}
-        {isMapRoute() ? <Footer /> : null}
+        {hasRouteWrapper() ? <Footer /> : null}
       </div>
     </div>
   );

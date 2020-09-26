@@ -1,4 +1,4 @@
-import {dangerColor, primaryColor} from "shared/assets/jss/material-dashboard-react.js";
+import {dangerColor, primaryColor} from "shared/assets/jss/theme.js";
 import tooltipStyle from "shared/assets/jss/material-dashboard-react/tooltipStyle.js";
 
 const attractionCardStyle = {

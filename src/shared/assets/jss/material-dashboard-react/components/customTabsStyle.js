@@ -1,4 +1,4 @@
-import {hexToRgb, whiteColor} from "../../material-dashboard-react";
+import {hexToRgb, whiteColor} from "../../theme";
 
 const customTabsStyle = {
     displayNone: {

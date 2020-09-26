@@ -2,7 +2,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import React from "react";
-import {hexToRgb, primaryColor} from "../../assets/jss/material-dashboard-react";
+import {hexToRgb, primaryColor} from "../../assets/jss/theme";
 
 const styles = {
     displayNone: {

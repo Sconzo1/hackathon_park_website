@@ -9,13 +9,11 @@ import Store from "@material-ui/icons/Store";
 import Warning from "@material-ui/icons/Warning";
 import DateRange from "@material-ui/icons/DateRange";
 import LocalOffer from "@material-ui/icons/LocalOffer";
-import Update from "@material-ui/icons/Update";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import AccessTime from "@material-ui/icons/AccessTime";
 import Accessibility from "@material-ui/icons/Accessibility";
-import BugReport from "@material-ui/icons/BugReport";
-import Code from "@material-ui/icons/Code";
-import Cloud from "@material-ui/icons/Cloud";
+import AssignmentLateRoundedIcon from '@material-ui/icons/AssignmentLateRounded';
+import AssignmentTurnedInRoundedIcon from '@material-ui/icons/AssignmentTurnedInRounded';
 
 import GridItem from "shared/components/Grid/GridItem.js";
 import GridContainer from "shared/components/Grid/GridContainer.js";
@@ -29,11 +27,11 @@ import CardIcon from "shared/components/Card/CardIcon.js";
 import CardBody from "shared/components/Card/CardBody.js";
 import CardFooter from "shared/components/Card/CardFooter.js";
 
-import {bugs, server, website} from "dashboard/variables/general.js";
+import {complaints, suggestions} from "dashboard/variables/general.js";
 
-import {completedTasksChart, dailySalesChart, emailsSubscriptionChart} from "dashboard/variables/charts.js";
+import {complaintsChart, revenueChart, visitsChart} from "dashboard/variables/charts.js";
 
-import styles from "../jss/homeStyle.js";
+import styles from "../assets/jss/homeStyle.js";
 
 
 const useStyles = makeStyles(styles);
@@ -52,9 +50,9 @@ export default function Home() {
                             <CardIcon color="warning">
                                 <Icon>content_copy</Icon>
                             </CardIcon>
-                            <p className={classes.cardCategory}>Used Space</p>
+                            <p className={classes.cardCategory}>План (мес.)</p>
                             <h3 className={classes.cardTitle}>
-                                49/50 <small>GB</small>
+                                46<small>%</small>
                             </h3>
                         </CardHeader>
                         <CardFooter stats>
@@ -62,8 +60,8 @@ export default function Home() {
                                 <Danger>
                                     <Warning/>
                                 </Danger>
-                                <a href="#pablo" onClick={e => e.preventDefault()}>
-                                    Get more space
+                                <a onClick={e => e.preventDefault()}>
+                                    Вы отстаете от графика
                                 </a>
                             </div>
                         </CardFooter>
@@ -75,13 +73,13 @@ export default function Home() {
                             <CardIcon color="success">
                                 <Store/>
                             </CardIcon>
-                            <p className={classes.cardCategory}>Revenue</p>
-                            <h3 className={classes.cardTitle}>$34,245</h3>
+                            <p className={classes.cardCategory}>Выручка</p>
+                            <h3 className={classes.cardTitle}>₽34,245</h3>
                         </CardHeader>
                         <CardFooter stats>
                             <div className={classes.stats}>
                                 <DateRange/>
-                                Last 24 Hours
+                                За 24 часа
                             </div>
                         </CardFooter>
                     </Card>
@@ -92,13 +90,13 @@ export default function Home() {
                             <CardIcon color="danger">
                                 <Icon>info_outline</Icon>
                             </CardIcon>
-                            <p className={classes.cardCategory}>Fixed Issues</p>
+                            <p className={classes.cardCategory}>Отзывов</p>
                             <h3 className={classes.cardTitle}>75</h3>
                         </CardHeader>
                         <CardFooter stats>
                             <div className={classes.stats}>
                                 <LocalOffer/>
-                                Tracked from Github
+                                С сайта "Яндекс"
                             </div>
                         </CardFooter>
                     </Card>
@@ -109,13 +107,13 @@ export default function Home() {
                             <CardIcon color="info">
                                 <Accessibility/>
                             </CardIcon>
-                            <p className={classes.cardCategory}>Followers</p>
-                            <h3 className={classes.cardTitle}>+245</h3>
+                            <p className={classes.cardCategory}>Посетители</p>
+                            <h3 className={classes.cardTitle}>+2453</h3>
                         </CardHeader>
                         <CardFooter stats>
                             <div className={classes.stats}>
-                                <Update/>
-                                Just Updated
+                                <DateRange/>
+                                За 1 неделю
                             </div>
                         </CardFooter>
                     </Card>
@@ -127,24 +125,24 @@ export default function Home() {
                         <CardHeader color="success">
                             <ChartistGraph
                                 className="ct-chart"
-                                data={dailySalesChart.data}
+                                data={revenueChart.data}
                                 type="Line"
-                                options={dailySalesChart.options}
-                                listener={dailySalesChart.animation}
+                                options={revenueChart.options}
+                                listener={revenueChart.animation}
                             />
                         </CardHeader>
                         <CardBody>
-                            <h4 className={classes.cardTitle}>Daily Sales</h4>
+                            <h4 className={classes.cardTitle}>Выручка</h4>
                             <p className={classes.cardCategory}>
                 <span className={classes.successText}>
                   <ArrowUpward className={classes.upArrowCardCategory}/> 55%
                 </span>{" "}
-                                increase in today sales.
+                                за последний месяц
                             </p>
                         </CardBody>
                         <CardFooter chart>
                             <div className={classes.stats}>
-                                <AccessTime/> updated 4 minutes ago
+                                <AccessTime/> обновлено 3 часа назад
                             </div>
                         </CardFooter>
                     </Card>
@@ -154,20 +152,24 @@ export default function Home() {
                         <CardHeader color="warning">
                             <ChartistGraph
                                 className="ct-chart"
-                                data={emailsSubscriptionChart.data}
+                                data={visitsChart.data}
                                 type="Bar"
-                                options={emailsSubscriptionChart.options}
-                                responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                                listener={emailsSubscriptionChart.animation}
+                                options={visitsChart.options}
+                                responsiveOptions={visitsChart.responsiveOptions}
+                                listener={visitsChart.animation}
                             />
                         </CardHeader>
                         <CardBody>
-                            <h4 className={classes.cardTitle}>Email Subscriptions</h4>
-                            <p className={classes.cardCategory}>Last Campaign Performance</p>
+                            <h4 className={classes.cardTitle}>Посетители</h4>
+                            <p className={classes.cardCategory}>
+                <span className={classes.successText}>+4621
+                </span>{" "}
+                                за последний месяц
+                            </p>
                         </CardBody>
                         <CardFooter chart>
                             <div className={classes.stats}>
-                                <AccessTime/> campaign sent 2 days ago
+                                <AccessTime/>только что
                             </div>
                         </CardFooter>
                     </Card>
@@ -177,19 +179,19 @@ export default function Home() {
                         <CardHeader color="danger">
                             <ChartistGraph
                                 className="ct-chart"
-                                data={completedTasksChart.data}
+                                data={complaintsChart.data}
                                 type="Line"
-                                options={completedTasksChart.options}
-                                listener={completedTasksChart.animation}
+                                options={complaintsChart.options}
+                                listener={complaintsChart.animation}
                             />
                         </CardHeader>
                         <CardBody>
-                            <h4 className={classes.cardTitle}>Completed Tasks</h4>
-                            <p className={classes.cardCategory}>Last Campaign Performance</p>
+                            <h4 className={classes.cardTitle}>Жалобы</h4>
+                            <p className={classes.cardCategory}>За последний месяц</p>
                         </CardBody>
                         <CardFooter chart>
                             <div className={classes.stats}>
-                                <AccessTime/> campaign sent 2 days ago
+                                <AccessTime/> обновлено 12 минут назад
                             </div>
                         </CardFooter>
                     </Card>
@@ -198,39 +200,28 @@ export default function Home() {
             <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                     <CustomTabs
-                        title="Tasks:"
+                        title="Мнения:"
                         headerColor="primary"
                         tabs={[
                             {
-                                tabName: "Bugs",
-                                tabIcon: BugReport,
+                                tabName: "Жалобы",
+                                tabIcon: AssignmentLateRoundedIcon,
                                 tabContent: (
                                     <Tasks
                                         checkedIndexes={[0, 3]}
                                         tasksIndexes={[0, 1, 2, 3]}
-                                        tasks={bugs}
+                                        tasks={complaints}
                                     />
                                 )
                             },
                             {
-                                tabName: "Website",
-                                tabIcon: Code,
+                                tabName: "Предложения",
+                                tabIcon: AssignmentTurnedInRoundedIcon,
                                 tabContent: (
                                     <Tasks
                                         checkedIndexes={[0]}
                                         tasksIndexes={[0, 1]}
-                                        tasks={website}
-                                    />
-                                )
-                            },
-                            {
-                                tabName: "Server",
-                                tabIcon: Cloud,
-                                tabContent: (
-                                    <Tasks
-                                        checkedIndexes={[1]}
-                                        tasksIndexes={[0, 1, 2]}
-                                        tasks={server}
+                                        tasks={suggestions}
                                     />
                                 )
                             }
@@ -240,20 +231,20 @@ export default function Home() {
                 <GridItem xs={12} sm={12} md={6}>
                     <Card>
                         <CardHeader color="warning">
-                            <h4 className={classes.cardTitleWhite}>Employees Stats</h4>
+                            <h4 className={classes.cardTitleWhite}>Сотрудники</h4>
                             <p className={classes.cardCategoryWhite}>
-                                New employees on 15th September, 2016
+                                Новые сотрудники на 22.09
                             </p>
                         </CardHeader>
                         <CardBody>
                             <Table
                                 tableHeaderColor="warning"
-                                tableHead={["ID", "Name", "Salary", "Country"]}
+                                tableHead={["ID", "Имя", "Зарплата", "Страна"]}
                                 tableData={[
-                                    ["1", "Dakota Rice", "$36,738", "Niger"],
-                                    ["2", "Minerva Hooper", "$23,789", "Curaçao"],
-                                    ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
-                                    ["4", "Philip Chaney", "$38,735", "Korea, South"]
+                                    ["1", "Дакота Райс", "₽36,738", "Россия"],
+                                    ["2", "Елена Разных", "₽23,789", "Россия"],
+                                    ["3", "Иван Иванов", "₽56,142", "Россия"],
+                                    ["4", "Данил Ирукин", "₽38,735", "Казахстан"]
                                 ]}
                             />
                         </CardBody>

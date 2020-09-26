@@ -22,7 +22,7 @@ import Table from "../../shared/components/Table/Table";
 import {Map, YMaps} from "react-yandex-maps";
 
 import ChartistGraph from "react-chartist";
-import {completedTasksChart, dailySalesChart, emailsSubscriptionChart} from "../variables/charts";
+import {complaintsChart, revenueChart, visitsChart} from "../variables/charts";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import CardFooter from "../../shared/components/Card/CardFooter";
 import AccessTime from "@material-ui/icons/AccessTime";
@@ -30,9 +30,10 @@ import MapIcon from '@material-ui/icons/Map';
 import BarChartRoundedIcon from '@material-ui/icons/BarChartRounded';
 import AppsIcon from '@material-ui/icons/Apps';
 
-import styles from "./../jss/attractionsStyle";
+import styles from "../assets/jss/attractionsStyle";
 import Tooltip from "@material-ui/core/Tooltip";
 import GetAppRoundedIcon from "@material-ui/icons/GetAppRounded";
+import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles(styles);
 
@@ -75,7 +76,7 @@ const TabTile = ({listAttr, setListAttr}) => {
             <Card plain>
                 <CardHeader plain color="primary">
                     <GridContainer justify="space-between">
-                        <GridItem xs={10}>
+                        <GridItem xs={9}>
                             <h4 className={classes.cardTitleWhite}>Список аттракционов</h4>
                             <p className={classes.cardCategoryWhite}>
                                 На данном экране вы сможете отредактировать, добавить и удалить любой аттракцион
@@ -133,7 +134,7 @@ const TabTile = ({listAttr, setListAttr}) => {
                     <DialogContentText>
                         <h6 style={{marginBottom: 0}}>Описание:</h6>
                         <p>To subscribe to this website, please enter your email address here. We will send updates
-                        occasionally.</p>
+                            occasionally.</p>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
@@ -161,24 +162,24 @@ const TabAnalytics = ({listAttr}) => {
                         <CardHeader color="success">
                             <ChartistGraph
                                 className="ct-chart"
-                                data={dailySalesChart.data}
+                                data={revenueChart.data}
                                 type="Line"
-                                options={dailySalesChart.options}
-                                listener={dailySalesChart.animation}
+                                options={revenueChart.options}
+                                listener={revenueChart.animation}
                             />
                         </CardHeader>
                         <CardBody>
-                            <h4 className={classes.cardTitle}>Daily Sales</h4>
+                            <h4 className={classes.cardTitle}>Выручка</h4>
                             <p className={classes.cardCategory}>
                 <span className={classes.successText}>
                   <ArrowUpward className={classes.upArrowCardCategory}/> 55%
                 </span>{" "}
-                                increase in today sales.
+                                за последний месяц
                             </p>
                         </CardBody>
                         <CardFooter chart>
                             <div className={classes.stats}>
-                                <AccessTime/> updated 4 minutes ago
+                                <AccessTime/> обновлено 3 часа назад
                             </div>
                         </CardFooter>
                     </Card>
@@ -188,20 +189,24 @@ const TabAnalytics = ({listAttr}) => {
                         <CardHeader color="warning">
                             <ChartistGraph
                                 className="ct-chart"
-                                data={emailsSubscriptionChart.data}
+                                data={visitsChart.data}
                                 type="Bar"
-                                options={emailsSubscriptionChart.options}
-                                responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                                listener={emailsSubscriptionChart.animation}
+                                options={visitsChart.options}
+                                responsiveOptions={visitsChart.responsiveOptions}
+                                listener={visitsChart.animation}
                             />
                         </CardHeader>
                         <CardBody>
-                            <h4 className={classes.cardTitle}>Email Subscriptions</h4>
-                            <p className={classes.cardCategory}>Last Campaign Performance</p>
+                            <h4 className={classes.cardTitle}>Посетители</h4>
+                            <p className={classes.cardCategory}>
+                <span className={classes.successText}>+4621
+                </span>{" "}
+                                за последний месяц
+                            </p>
                         </CardBody>
                         <CardFooter chart>
                             <div className={classes.stats}>
-                                <AccessTime/> campaign sent 2 days ago
+                                <AccessTime/>только что
                             </div>
                         </CardFooter>
                     </Card>
@@ -211,19 +216,19 @@ const TabAnalytics = ({listAttr}) => {
                         <CardHeader color="danger">
                             <ChartistGraph
                                 className="ct-chart"
-                                data={completedTasksChart.data}
+                                data={complaintsChart.data}
                                 type="Line"
-                                options={completedTasksChart.options}
-                                listener={completedTasksChart.animation}
+                                options={complaintsChart.options}
+                                listener={complaintsChart.animation}
                             />
                         </CardHeader>
                         <CardBody>
-                            <h4 className={classes.cardTitle}>Completed Tasks</h4>
-                            <p className={classes.cardCategory}>Last Campaign Performance</p>
+                            <h4 className={classes.cardTitle}>Жалобы</h4>
+                            <p className={classes.cardCategory}>За последний месяц</p>
                         </CardBody>
                         <CardFooter chart>
                             <div className={classes.stats}>
-                                <AccessTime/> campaign sent 2 days ago
+                                <AccessTime/> обновлено 12 минут назад
                             </div>
                         </CardFooter>
                     </Card>
@@ -234,7 +239,7 @@ const TabAnalytics = ({listAttr}) => {
                     <Card>
                         <CardHeader color="primary">
                             <GridContainer justify="space-between">
-                                <GridItem xs={10}>
+                                <GridItem xs={9}>
                                     <h4 className={classes.cardTitleWhite}>Аналитика аттракционов</h4>
                                     <p className={classes.cardCategoryWhite}>
                                         Отслеживайте работоспособность и посещаемость своих аттракционов
@@ -246,9 +251,9 @@ const TabAnalytics = ({listAttr}) => {
                                         placement="top"
                                         classes={{tooltip: classes.tooltip}}
                                     >
-                                        <Button justIcon round color="transparent">
+                                        <IconButton color="inherit">
                                             <GetAppRoundedIcon/>
-                                        </Button>
+                                        </IconButton>
                                     </Tooltip>
                                 </GridItem>
                             </GridContainer>

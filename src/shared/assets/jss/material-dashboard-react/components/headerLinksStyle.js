@@ -2,7 +2,7 @@ import {
   defaultFont,
   dangerColor,
   whiteColor
-} from "shared/assets/jss/material-dashboard-react.js";
+} from "shared/assets/jss/theme.js";
 
 import dropdownStyle from "shared/assets/jss/material-dashboard-react/dropdownStyle.js";
 

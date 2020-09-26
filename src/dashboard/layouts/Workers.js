@@ -1,8 +1,6 @@
 import React from "react";
 
 import {makeStyles} from "@material-ui/core/styles";
-
-import Button from "shared/components/CustomButtons/Button";
 import GridItem from "shared/components/Grid/GridItem";
 import GridContainer from "shared/components/Grid/GridContainer";
 import Table from "shared/components/Table/Table";
@@ -21,8 +19,9 @@ import Accessibility from "@material-ui/icons/Accessibility";
 import Update from "@material-ui/icons/Update";
 import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
 
-import styles from "./../jss/workersStyle"
+import styles from "../assets/jss/workersStyle"
 import Tooltip from "@material-ui/core/Tooltip";
+import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles(styles);
 
@@ -31,12 +30,12 @@ export default function Workers() {
     const classes = useStyles();
 
     const mockPeople = [
-        ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-        ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-        ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-        ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-        ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-        ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+        ["Dakota Rice", "Niger", "Oud-Turnhout", "₽36,738"],
+        ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "₽23,789"],
+        ["Sage Rodriguez", "Netherlands", "Baileux", "₽56,142"],
+        ["Philip Chaney", "Korea, South", "Overland Park", "₽38,735"],
+        ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "₽63,542"],
+        ["Mason Porter", "Chile", "Gloucester", "₽78,615"]
     ]
 
     return (
@@ -72,7 +71,7 @@ export default function Workers() {
                                 <Store/>
                             </CardIcon>
                             <p className={classes.cardCategory}>Revenue</p>
-                            <h3 className={classes.cardTitle}>$34,245</h3>
+                            <h3 className={classes.cardTitle}>₽34,245</h3>
                         </CardHeader>
                         <CardFooter stats>
                             <div className={classes.stats}>
@@ -132,9 +131,9 @@ export default function Workers() {
                                 placement="top"
                                 classes={{tooltip: classes.tooltip}}
                             >
-                                <Button justIcon round color="transparent">
+                                <IconButton color="inherit">
                                     <GetAppRoundedIcon/>
-                                </Button>
+                                </IconButton>
                             </Tooltip>
                         </GridItem>
                     </GridContainer>

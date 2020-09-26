@@ -12,11 +12,11 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
 // core components
-import AdminNavbarLinks from "dashboard/components/Navbars/AdminNavbarLinks.js";
+import AdminNavbarLinks from "dashboard/layouts/Navbars/AdminNavbarLinks.js";
 
 import styles from "shared/assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
-import bgImage from "../../img/sidebar.jpg";
+import bgImage from "../../assets/img/sidebar.jpg";
 
 const useStyles = makeStyles(styles);
 

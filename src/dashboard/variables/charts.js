@@ -1,31 +1,22 @@
-// ##############################
-// // // javascript library for creating charts
-// #############################
-var Chartist = require("chartist");
+let Chartist = require("chartist");
 
-// ##############################
-// // // variables used to create animation on charts
-// #############################
-var delays = 80,
+let delays = 80,
   durations = 500;
-var delays2 = 80,
+let delays2 = 80,
   durations2 = 500;
 
-// ##############################
-// // // Daily Sales
-// #############################
 
-const dailySalesChart = {
+const revenueChart = {
   data: {
-    labels: ["M", "T", "W", "T", "F", "S", "S"],
-    series: [[12, 17, 7, 17, 23, 18, 38]]
+    labels: ["11", "12", "13", "14", "15", "16", "17", "18"],
+    series: [[12, 17, 7, 17, 23, 18, 38, 43]]
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
       tension: 0
     }),
     low: 0,
-    high: 50,
+    high: 70,
     chartPadding: {
       top: 0,
       right: 0,
@@ -65,27 +56,10 @@ const dailySalesChart = {
   }
 };
 
-// ##############################
-// // // Email Subscriptions
-// #############################
-
-const emailsSubscriptionChart = {
+const visitsChart = {
   data: {
-    labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "Mai",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec"
-    ],
-    series: [[542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]]
+    labels: ["11", "12", "13", "14", "15", "16", "17", "18"],
+    series: [[542, 443, 320, 780, 553, 453, 326, 434]]
   },
   options: {
     axisX: {
@@ -130,21 +104,17 @@ const emailsSubscriptionChart = {
   }
 };
 
-// ##############################
-// // // Completed Tasks
-// #############################
-
-const completedTasksChart = {
+const complaintsChart = {
   data: {
-    labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
-    series: [[230, 750, 450, 300, 280, 240, 200, 190]]
+    labels: ["11", "12", "13", "14", "15", "16", "17", "18"],
+    series: [[230, 350, 450, 300, 280, 240, 200, 190]]
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
       tension: 0
     }),
     low: 0,
-    high: 1000,
+    high: 800,
     chartPadding: {
       top: 0,
       right: 0,
@@ -184,7 +154,7 @@ const completedTasksChart = {
 };
 
 module.exports = {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart
+  revenueChart,
+  visitsChart,
+  complaintsChart
 };

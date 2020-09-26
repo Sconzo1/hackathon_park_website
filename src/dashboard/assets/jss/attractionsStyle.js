@@ -1,5 +1,5 @@
-import {grayColor, hexToRgb, successColor, whiteColor} from "shared/assets/jss/material-dashboard-react.js";
-import tooltipStyle from "../../shared/assets/jss/material-dashboard-react/tooltipStyle";
+import {grayColor, hexToRgb, successColor, whiteColor} from "shared/assets/jss/theme.js";
+import tooltipStyle from "../../../shared/assets/jss/material-dashboard-react/tooltipStyle";
 
 const attractionsStyle = {
     ...tooltipStyle,

@@ -1,26 +1,15 @@
-// ##############################
-// // // Tasks for TasksCard - see Home view
-// #############################
-
-var bugs = [
-  'Sign contract for "What are conference organizers afraid of?"',
-  "Lines From Great Russian Literature? Or E-mails From My Boss?",
-  "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit",
-  "Create 4 Invisible User Experiences you Never Knew About"
+const complaints = [
+  'Петр: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec tempor',
+  "Иван: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec tempor",
+  "Елена: Lorem ipsum dolor sit amet, consectetur elit. Phasellus nec tempor",
+  "Аноним: Lorem ipsum dolor amet, consectetur adipiscing elit. Phasellus nec tempor"
 ];
-var website = [
-  "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit",
-  'Sign contract for "What are conference organizers afraid of?"'
-];
-var server = [
-  "Lines From Great Russian Literature? Or E-mails From My Boss?",
-  "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit",
-  'Sign contract for "What are conference organizers afraid of?"'
+const suggestions = [
+  "Алекс: Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  "Аноним: Lorem ipsum dolor sit amet, consectetur"
 ];
 
 module.exports = {
-  // these 3 are used to create the tasks lists in TasksCard - Home view
-  bugs,
-  website,
-  server
+  complaints,
+  suggestions
 };

@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 import GridContainer from "../../../shared/components/Grid/GridContainer";
 import GridItem from "../../../shared/components/Grid/GridItem";
 
-import styles from "./../../jss/cards/attractionCardStyle"
+import styles from "../../assets/jss/cards/attractionCardStyle"
 
 
 const useStyles = makeStyles(styles);
